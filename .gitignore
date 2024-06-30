@@ -1,1 +1,7 @@
 .DS_Store
+
+# Ignorowanie plików log*.txt
+log*.txt
+
+# Ignorowanie plików error*.txt
+error*.txt
