@@ -21,7 +21,7 @@ elif [ "$1" == "--logs" ]; then
         echo "Nazwa skryptu: skrypt.sh" >> "$log_file"
         echo "Data utworzenia: $(date +"%Y-%m-%d %H:%M:%S")" >> "$log_file"
     done
-elif [ "$1" == "--help" ]; then
+elif [ "$1" == "--help" ] || [ "$1" == "-help" ]; then
     echo "Dostępne opcje:"
     echo "--date       : Wyświetla dzisiejszą datę."
     echo "--logs [liczba] : Tworzy (domyślnie 100) plików logx.txt z informacjami."
