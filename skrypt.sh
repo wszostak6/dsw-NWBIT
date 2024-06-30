@@ -26,3 +26,10 @@ elif [ "$1" == "--help" ] || [ "$1" == "-help" ]; then
     echo "--date       : Wyświetla dzisiejszą datę."
     echo "--logs [liczba] : Tworzy (domyślnie 100) plików logx.txt z informacjami."
     echo "--help       : Wyświetla pomoc."
+    echo
+    echo "Nowe flagi (bez mergowania z istniejącym tekstem):"
+    echo "--init       : Klonuje całe repozytorium do bieżącego katalogu i ustawia ścieżkę w PATH."
+    echo "--error [liczba] : Tworzy [liczba] plików errorx/errorx.txt (domyślnie 100)."
+    echo
+    echo "Skrócone formy:"
+    echo "-e [liczba]  : Skrócona forma dla --error [liczba]."
