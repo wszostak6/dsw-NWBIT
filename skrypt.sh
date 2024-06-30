@@ -3,7 +3,7 @@
 if [ "$1" == "--date" ] || [ "$1" == "-date" ]; then
     current_date=$(date +"%Y-%m-%d")
     echo "Dzisiejsza data: $current_date"
-elif [ "$1" == "--logs" ]; then
+elif [ "$1" == "--logs" ] || [ "$1" == "-logs" ]; then
     if [ -z "$2" ]; then
         num_logs=100
     else
