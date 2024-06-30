@@ -21,6 +21,28 @@ elif [ "$1" == "--logs" ] || [ "$1" == "-logs" ]; then
         echo "Nazwa skryptu: skrypt.sh" >> "$log_file"
         echo "Data utworzenia: $(date +"%Y-%m-%d %H:%M:%S")" >> "$log_file"
     done
+elif [ "$1" == "--init" ]; then
+    echo "Klonowanie repozytorium..."
+elif [ "$1" == "--error" ] || [ "$1" == "-error" ] || [ "$1" == "-e" ]; then
+    if [ -z "$2" ]; then
+        num_errors=100
+    else
+        num_errors=$2
+        shift
+    fi
+
+    if ! [[ "$num_errors" =~ ^[0-9]+$ ]]; then
+        echo "Błąd: Podany argument nie jest liczbą całkowitą."
+        exit 1
+    fi
+
+    for (( i=1; i<=$num_errors; i++ )); do
+        error_file="error$i/error$i.txt"
+        mkdir -p "$(dirname "$error_file")"
+        echo "Plik error: $error_file" > "$error_file"
+        echo "Nazwa skryptu: skrypt.sh" >> "$error_file"
+        echo "Data utworzenia: $(date +"%Y-%m-%d %H:%M:%S")" >> "$error_file"
+    done
 elif [ "$1" == "--help" ] || [ "$1" == "-help" ]; then
     echo "Dostępne opcje:"
     echo "--date       : Wyświetla dzisiejszą datę."
