@@ -26,3 +26,7 @@ elif [ "$1" == "--help" ]; then
     echo "--date       : Wyświetla dzisiejszą datę."
     echo "--logs [liczba] : Tworzy (domyślnie 100) plików logx.txt z informacjami."
     echo "--help       : Wyświetla pomoc."
+else
+    echo "Błąd: Nieznana opcja. Użyj --help, aby uzyskać pomoc."
+    exit 1
+fi
